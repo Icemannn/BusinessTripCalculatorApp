@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label layoutX="51.0" layoutY="14.0" prefHeight="30.0" prefWidth="489.0" text="Wellcome to the business trip expenses calculator,">
+         <font>
+            <Font name="Times New Roman Italic" size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="chooseTransport" layoutX="51.0" layoutY="275.0" prefHeight="50.0" prefWidth="500.0" promptText="Choоse the way of travel" />
+      <Button layoutX="61.0" layoutY="465.0" mnemonicParsing="false" onAction="#submitTheWayOfTravel" text="Submit" />
+      <Label layoutX="51.0" layoutY="232.0" prefHeight="30.0" prefWidth="500.0" text="Choоse the way of travel">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="413.0" prefHeight="30.0" prefWidth="500.0" text="Submit chosen way of travel to continue">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="creator" layoutX="51.0" layoutY="169.0" promptText="Full name" />
+      <Label layoutX="50.0" layoutY="118.0" prefHeight="30.0" prefWidth="500.0" text="Enter your name:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="creatorLabel" layoutX="540.0" layoutY="14.0" prefHeight="30.0" prefWidth="219.0">
+         <font>
+            <Font name="Times New Roman Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="217.0" layoutY="169.0" mnemonicParsing="false" onAction="#submitCreatorName" text="Submit" />
+   </children>
+</AnchorPane>

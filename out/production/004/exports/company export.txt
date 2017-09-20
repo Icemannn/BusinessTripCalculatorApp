@@ -1,0 +1,25 @@
+COMPANY EXPORT
+Customer: Нефтохим Бургас
+Responsible person: Костадин Костадинов
+Created by: Илиан Теофилов on Tue Sep 19 16:48:56 EEST 2017
+Distance to travel, including commutes: 720 Km
+Fuel consumption per 100 Km: 6 Liters
+Fuel price per liter: 1.95 BGN
+Car depreciation per Km: 30 %
+Vehicle current cost: 109.51 BGN
+Number of vehicles: 1
+Correction factor: 10 %
+Total vehicle(s) cost: 120.46 BGN
+
+Number of engineers: 1
+Number of technicians: 0
+Labour cost engineer per day: 100 BGN
+Labour cost technician per day: 0 BGN
+Hotel cost per person per day: 0 BGN
+Mission expenses person per day: 10 BGN
+Nunber of days on site: 1
+Current cost for activities on site: 110.0 BGN
+Correction factor: 10 %
+Total cost for activities on site: 121.0 BGN
+
+Total cost for performing the service: 241.46 BGN
