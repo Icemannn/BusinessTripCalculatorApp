@@ -63,7 +63,7 @@
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="custolerLabel" layoutX="257.0" layoutY="368.0" prefHeight="30.0" prefWidth="219.0" text="Company's name">
+      <Label fx:id="customerLabel" layoutX="257.0" layoutY="368.0" prefHeight="30.0" prefWidth="219.0" text="Company's name">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>

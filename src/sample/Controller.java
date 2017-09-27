@@ -27,7 +27,7 @@ public class Controller implements Initializable {
     @FXML
     private Label creatorLabel;
     @FXML
-    private Label custolerLabel;
+    private Label customerLabel;
     @FXML
     private Label responsiblePersonLabel;
 
@@ -40,11 +40,17 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         chooseTransport.setItems(listOfTravel);
     }
+    // This method sets the name of the person, who creates the calculations and file exports.
+    // This method sets the name of the visited company, that your workers will work in.
+    // This method sets the name of the person from customer's side, that enquires for your services.
     public void submitCreatorName(javafx.event.ActionEvent event){
         creatorLabel.setText(creator.getText());
-        custolerLabel.setText(customersCompany.getText());
+        customerLabel.setText(customersCompany.getText());
         responsiblePersonLabel.setText(responsiblePerson.getText());
     }
+    // This sets the way workers will be travelling to the Customer's site, in most ways it is by company cars
+    // because of the engineering equipment that they carry with them. That's why this option is the only one that
+    // works for now :)
     public void submitTheWayOfTravel(javafx.event.ActionEvent event)throws Exception{
         if (chooseTransport.getValue().equals("By car")){
             Stage primaryStage = new Stage();

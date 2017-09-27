@@ -102,12 +102,16 @@ public class ControllerByCar implements Initializable {
     @FXML
     private Model calculations = new Model();
 
-
-    public ObservableList<String> milesOrKms = FXCollections.observableArrayList("Km", "Miles");
-    public ObservableList<String> currencySelection = FXCollections.observableArrayList( "BGN", "USD", "EURO");
-    public ObservableList<String> litersGallonsSelection = FXCollections.observableArrayList( "Liters", "Gallons");
-    public ObservableList<String> percentage = FXCollections.observableArrayList( "%");
-    public ObservableList<String> percentage2 = FXCollections.observableArrayList( "%");
+    @FXML
+    private ObservableList<String> milesOrKms = FXCollections.observableArrayList("Km", "Miles");
+    @FXML
+    private ObservableList<String> currencySelection = FXCollections.observableArrayList( "BGN", "USD", "EURO");
+    @FXML
+    private ObservableList<String> litersGallonsSelection = FXCollections.observableArrayList( "Liters", "Gallons");
+    @FXML
+    private ObservableList<String> percentage = FXCollections.observableArrayList( "%");
+    @FXML
+    private ObservableList<String> percentage2 = FXCollections.observableArrayList( "%");
 
 
     @Override
@@ -118,15 +122,20 @@ public class ControllerByCar implements Initializable {
         choosePercentage.setItems(percentage);
         choosePercentage2.setItems(percentage2);
     }
+    // This asigns the value of creator's name in Controller class;
     public void creator(String text){
         creatorLabelByCar.setText(text);
     }
+    // This assigns the value of visited company's name in Controller class;
     public void companyName(String text){
         customersNamByCar.setText(text);
     }
+    // This method assigns the value of the name of the person from customer's side, that enquires for your services
+    // in Controller class.
     public void responsiblePerson(String text){
         responsiblePersonByCar.setText(text);
     }
+    // This sets the measure of currencies, that calculations will be done with, for example Euro, US dollars...
     public void setChosenCurrency(javafx.event.ActionEvent event){
         chosenCurrency.setText(chooseCurrency.getValue());
         chosenCurrency2.setText(chooseCurrency.getValue());
@@ -134,6 +143,7 @@ public class ControllerByCar implements Initializable {
         chosenCurrency4.setText(chooseCurrency.getValue());
         chosenCurrency5.setText(chooseCurrency.getValue());
     }
+    // This sets the measure of distance, for example kilometers or miles
     public void setChosenKmOrMile(javafx.event.ActionEvent event){
 
         if (chooseKmOrMiles.getValue().equals("Miles")){
@@ -145,6 +155,7 @@ public class ControllerByCar implements Initializable {
             chosenKmOrMile2.setText(chooseKmOrMiles.getValue());
         }
     }
+    // This sets the measure of fuel, that is sell in the country you will visit.
     public void setChosenLittersOrGallons(ActionEvent event){
         if (chooseLitersOrGallons.getValue().equals("Liters")){
             chosenLiterOrGallon.setText("liter");
@@ -153,6 +164,7 @@ public class ControllerByCar implements Initializable {
         }
 
     }
+    // This button calculates current cost of one vehicle, without adding any profit and vehicles count;
     public void calculateButtonClicked(javafx.event.ActionEvent event){
         double firstValue = Double.parseDouble(distance.getText());
         double secondValue = Double.parseDouble(fuelPrice.getText());
@@ -163,6 +175,8 @@ public class ControllerByCar implements Initializable {
         double roundedCurrentResult = (double) Math.round(currentResult * 100) / 100;
         currentCostResult.setText(String.valueOf(roundedCurrentResult));
     }
+    // This button calculates total cost of transportation to the customer's site with profit factor add
+    // and all vehicles that you'll use.
     public void calculateTotalCostClicked(ActionEvent event){
         double firstValue = Double.parseDouble(currentCostResult.getText());
         double secondValue = Double.parseDouble(correctionFactor.getText());
@@ -172,6 +186,7 @@ public class ControllerByCar implements Initializable {
         double roundedCurrentResult = (double) Math.round(currentResult * 100) / 100;
         totalVehicleCostResult.setText(String.valueOf(roundedCurrentResult));
     }
+    // This calculates current cost of your workers labour and hotel expenses for all staying period.
     public void calculateCurrentCostActivities(ActionEvent event){
         int firstValue = Integer.parseInt(numberOfEngineers.getText());
         int secondValue = Integer.parseInt(numberOfTechnicians.getText());
@@ -186,6 +201,8 @@ public class ControllerByCar implements Initializable {
         double roundedCurrentResult = (double)Math.round(currentResult * 100)/ 100;
         currentCostActivitiesResult.setText(String.valueOf(roundedCurrentResult));
     }
+    // This calculates total cost of your workers labour and hotel expenses for all staying period with
+    // added profit factor.
     public void calculateTotalCostActivities(ActionEvent event){
         int firstValue = Integer.parseInt(numberOfEngineers.getText());
         int secondValue = Integer.parseInt(numberOfTechnicians.getText());
@@ -200,6 +217,7 @@ public class ControllerByCar implements Initializable {
         double roundedResult = (double)Math.round(totalResult * 100) / 100;
         totalCostActivitiesResult.setText(String.valueOf(roundedResult));
     }
+    // This calculates total cost for performing the service that customer have to pay you.
     public void calculateFinalCostForPerfTheService (ActionEvent event){
         double firstValue = Double.parseDouble(totalVehicleCostResult.getText());
         double secondValue = Double.parseDouble(totalCostActivitiesResult.getText());
@@ -207,6 +225,8 @@ public class ControllerByCar implements Initializable {
         double roundedResult = (double)Math.round(totalCostResult * 100)/100;
         finalCosForPerfTheService.setText(String.valueOf(roundedResult));
     }
+    // This exports in .txt file limited positions, witch are enough to assure the Customer
+    // how you make calculations, IF HE WANTS such am information.
     public void customerExportByCar(ActionEvent event){
         final String outputPath = "/src/exports/customer export.txt";
         String projectPath = System.getProperty("user.dir");
@@ -248,13 +268,15 @@ public class ControllerByCar implements Initializable {
 
             bufferedWriter.close();
             fileWriter.close();
-            JOptionPane.showMessageDialog(null, "Customer export completed");
+            JOptionPane.showMessageDialog(null, "Customer export completed\n" + outputFilePath);
 
         }catch (Exception ex){
             ex.printStackTrace();
         }
 
     }
+    // This exports in .txt file all positions that you've been entered. This file could be stored in offer's file
+    // in company's archive as a proof how the price is formed.
     public void companyExportByCar (ActionEvent event){
         final String outputPath = "/src/exports/company export.txt";
         String projectPath = System.getProperty("user.dir");
